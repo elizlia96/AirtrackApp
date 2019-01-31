@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      th:include="layout :: page">
+<body>
+    <div th:fragment="content">
+
+        <div class="starter-template">
+            <h2> Please select location: </h2>
+        </div>
+            <div class="list-locaions">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="locationFlag : ${locationFlags}">
+                        <td th:text="${locationFlag.location.id}"></td>
+                        <td>
+                            <a th:href="@{/condition/{id}/(id=${locationFlag.location.id})}" th:text="${locationFlag.location.name}"/>
+                        </td>
+                        <td th:text="${locationFlag.flag}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 col-md-offset-10">
+                    <a type="button" class="btn btn-primary" th:href="@{/location/add}">Add new Location</a>
+                </div>
+            </div>
+</div>
+</body>
+</html>
