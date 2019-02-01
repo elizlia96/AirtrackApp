@@ -123,11 +123,14 @@ public class StandartController {
                     Standart standart = standartService.addNewStandart(change);
                     standartRepository.save(standart);
                     location.setStandart(standart);
+                    locationRepository.save(location);
                 }
                 changeRepository.delete(change.getId());
             }
         };
         Timer timer = new Timer();
-        timer.schedule(task, 10800000);
+        timer.schedule(task, 300000);
     }
 }
+
+//10800000

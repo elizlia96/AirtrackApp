@@ -10,11 +10,11 @@
     <form th:action="@{/profile/edit}" method="post" class="form-sign" th:object="${newUser}">
         <div class="form-group">
             <label class="control-label" for="username">User Name</label>
-            <input type="text" class="form-control" id="username" th:field="*{username}" th:placeholder="Username" />
+            <input type="text" class="form-control" id="username" th:field="*{username}"  th:placeholder="#{username}" />
         </div>
         <div class="form-group">
             <label class="control-label" for="email">Email</label>
-            <input type="email" class="form-control" id="email" th:field="*{email}" placeholder="Email" />
+            <input type="email" class="form-control" id="email" th:field="*{email}"  th:placeholder="#{email}" />
         </div>
         <div class="form-group">
             <label class="control-label" for="password">Password</label>

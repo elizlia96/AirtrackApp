@@ -12,17 +12,18 @@
                 <table class="table table-hover">
                     <thead>
                     <tr>
-                        <th>Id</th>
                         <th>Name</th>
+                        <th>Standart</th>
                         <th>Status</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr th:each="locationFlag : ${locationFlags}">
-                        <td th:text="${locationFlag.location.id}"></td>
+
                         <td>
                             <a th:href="@{/condition/{id}/(id=${locationFlag.location.id})}" th:text="${locationFlag.location.name}"/>
                         </td>
+                        <td th:text="${locationFlag.location.standart.name}"></td>
                         <td th:text="${locationFlag.flag}"></td>
                     </tr>
                     </tbody>

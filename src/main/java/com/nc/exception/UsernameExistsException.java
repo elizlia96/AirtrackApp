@@ -1,6 +1,10 @@
 package com.nc.exception;
 
-public class UsernameExistsException extends Exception {
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(value= HttpStatus.INTERNAL_SERVER_ERROR)
+public class UsernameExistsException extends RuntimeException {
     public UsernameExistsException(String message)
     {
         super(message);

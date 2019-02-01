@@ -48,7 +48,10 @@ public class UserController {
     public String updateProfile(Map<String, Object> model) {
         User user = userService.getCurrentUser();
 
-        model.put("newUser", new UserDto());
+        UserDto userDto= new UserDto();
+        userDto.setUsername(user.getUsername());
+        userDto.setEmail(user.getEmail());
+        model.put("newUser", userDto);
         model.put("user", user);
         model.put("locations", locationRepository.findAll());
         return "profile/edit";

@@ -8,7 +8,9 @@ import java.sql.Timestamp;
 public class Condition {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "cond_id_sequence",
+            sequenceName="cond_id_sequence", initialValue = 2)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cond_id_sequence")
     @Column(name = "cond_id")
     private Integer id;
 

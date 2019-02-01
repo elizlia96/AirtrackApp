@@ -1,6 +1,7 @@
 package com.nc.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -16,23 +17,23 @@ public class Standart {
     @Column(name = "name")
     private String name;
 
-
+    @Size(min=-40, max=40)
     @Column(name = "temp_min")
     private Integer temp_min;
 
-
+    @Size(min=-40, max=40)
     @Column(name = "temp_max")
     private Integer temp_max;
 
-
+    @Size(min=20, max=80)
     @Column(name = "hum_max")
     private Integer hum_max;
 
-
+    @Size(min=600, max=1000)
     @Column(name = "carb_diox_min")
     private Integer co2_min;
 
-
+    @Size(min=600, max=1000)
     @Column(name = "carb_diox_max")
     private Integer co2_max;
 
